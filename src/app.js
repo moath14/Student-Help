@@ -1,7 +1,7 @@
 const express = require('express');
 const path = require('path');
 const exphbs = require('express-handlebars');
-const controllers = require('./controller/index');
+const controllers = require('./controllers/index');
 const bodyParser = require('body-parser');
 const app = express();
 
@@ -11,7 +11,7 @@ app.engine(
   'hbs',
   exphbs({
     extname: 'hbs',
-    layoutsDir: path.join(__dirname, 'views', 'layouts'),
+    layoutsDir: path.join(__dirname, 'views', 'layout'),
     partialsDir: path.join(__dirname, 'views', 'partials'),
     defaultLayout: 'main'
   })
