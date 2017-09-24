@@ -1,4 +1,4 @@
-const connection  = require('../Database/db_connection.js')
+const connection  = require('./database/db_connection.js')
 require('env2')('./config.env');
 
 // new user "register"
