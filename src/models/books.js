@@ -110,3 +110,17 @@ exports.searchBookByISBN = (obj, cb) => {
   });
 };
 
+// show all books
+exports.showAllBooks = (obj, cb) => {
+  const sql = {
+    text: `SELECT title,isbn,version,auther,img_url FROM books`
+  };
+  connection.query(sql, (err, result) => {
+    if (err) {
+      const errshow = new error('Cant make show books');
+    } else {
+      cb(null, result.rows[0]);
+    }
+  });
+};
+
