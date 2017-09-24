@@ -98,7 +98,7 @@ nav ul li:hover{
 	position: relative;
 	display: flex;
 	justify-content: center;
-	flex-direction: column;
+	flex-direction: column;	
 }
 
 .sec-slide:after{
@@ -160,7 +160,7 @@ nav ul li:hover{
 
 .sec-book-add .book-img-info .photo img{
 	width: 100%;
-
+	
 }
 
 .sec-book-add .book-img-info .photo-info p:first-child{
@@ -246,7 +246,7 @@ aside .ser-book{
 	flex-direction: row;
 	flex:1;
     position: relative;
-    z-index: 4444;
+    z-index: 4444;	
 }
 
 aside .ser-book h2{
@@ -279,13 +279,13 @@ aside .ser-book .form form input{
 	outline: none;
 	background-color: transparent;
 	/*background-color: #f9f9f9;*/
-	padding: 10px 0;
+	padding: 10px 0; 
 	width: 450px;
 	font-size: 16px;
 }
 
 aside .ser-book .form form input::selection{
-	background-color: rgba(142, 142, 224, 0.53) ;
+	background-color: rgba(142, 142, 224, 0.53) ; 
 }
 
 aside .ser-book .form form .or{
@@ -343,7 +343,7 @@ main h2{
 	padding: 30px 0 80px 0;
     text-transform: capitalize;
     font-family: Roboto Slab;
-    color: #34495E;
+    color: #34495E;	
 }
 main .team{
 	display: flex;
@@ -365,7 +365,7 @@ main .team .git-fb a i{
 }
 main .team .git-fb a i[class="fa fa-facebook-square fa-2x"]:hover{
 	color: #4267B2;
-
+	
 }
 
 main .team .git-fb a i[class="fa fa-twitter-square fa-2x"]:hover{
@@ -386,7 +386,7 @@ main .team .moath .photo,
 main .team .mahmoud .photo{
 	width: 200px;
 	height: 200px;
-
+	
 }
 
 main .team .ghadeer .photo img,
@@ -409,7 +409,7 @@ main .team .bord{
 	-o-transition: all 1.2s ease;
 	-ms-transition: all 1.2s ease;
 	transition: all 1.2s ease;
-
+	
 }
 
 /*main .team .bord:after{
