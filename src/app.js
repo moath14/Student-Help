@@ -21,14 +21,5 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.set('port', process.env.PORT || 4000);
 app.use(express.static(path.join(__dirname, '..', 'public')));
-app.use(controllers);
-
-app.use((err, req, res, next)=>{
-  res.status(err.status || 500);
-  res.render('error', {
-    message:err.message,
-    error:{}
-  })
-})
-
+app.use(controllers)
 module.exports = app;
