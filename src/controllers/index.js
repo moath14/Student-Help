@@ -7,7 +7,4 @@ const signupController = require('./signupController');
 router.get('/signup', signupController.get);
 router.post('/signup', signupController.post);
 
-
-
-
 module.exports = router;
