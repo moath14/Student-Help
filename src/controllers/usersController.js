@@ -1,14 +1,11 @@
 exports.home = (req, res) => {
-  res.render('home')
-}
+  res.render('home');
+};
 
 exports.login = (req, res) => {
-
-
-  res.render('login')
-}
+  res.render('login');
+};
 
 exports.signup = (req, res) => {
-
-  res.render('signup')
-}
+  res.render('signup');
+};
