@@ -2,15 +2,14 @@ const connection  = require('./database/db_connection.js')
 require('env2')('./config.env');
 
 // new user "register"
-exports.register = (obj,cb)=>{
+exports.register = (name,email,password,cb)=>{
 const sql = {
   text : `INSERT INTO students (name,email,password) VALUES ($1,$2,$3)`,
- values: [obj.name, obj.email,obj.password]
-
+ values: [name,email,password]
 } ;
 connection.query(sql,(err,result)=> {
   if(err){
-    const existed = new error('Existed User');
+    const existed = new Error('Existed User');
     cb(existed);
   }else {
     cb(null,result)
