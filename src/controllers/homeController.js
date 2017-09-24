@@ -1,6 +1,8 @@
+const book = require('../models/books.js');
 
 exports.get = (req, res, next) => {
-  book.get.showAllBooks((err, data) => {
+	console.log(req.body)
+  book.showAllBooks((err, data) => {
     if (err) {
       next(err);
     } else {

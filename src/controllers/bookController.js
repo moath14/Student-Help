@@ -1,9 +1,13 @@
-exports.get = (req, res, next) => {
-  book.post.addBook((err, data) => {
+const book = require('../models/books.js');
+
+exports.post = (req, res) => {
+
+  book.addBook(req.body,(err, data) => {
     if (err) {
-      next(err);
+      throw err;
     } else {
       res.render('addBook', {data});
     }
   });
 };
+
