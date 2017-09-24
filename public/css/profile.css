@@ -18,7 +18,7 @@
 /*start header and logo*/
 header{
 	background-color: #F2F2F2;
-
+	
 }
 
 .sign-up{
@@ -61,7 +61,7 @@ header{
 nav{
 	background-color: #3C8AB8;
 	box-shadow: 2px 2px 25px #3C8AB8;
-
+	
 }
 nav ul{
 	list-style: none;
@@ -105,7 +105,7 @@ section .user{
 
 section .user .photo{
 	width: 25%;
-
+	
 
 }
 
@@ -141,7 +141,7 @@ main table{
 	border-bottom: 1px solid #CCC;
 	width: 90%;
     border-collapse: collapse;
-    border-spacing: 0;
+    border-spacing: 0;	
 }
 
 main table caption{
@@ -152,7 +152,7 @@ main table caption{
 }
 
 main table tr th{
-	text-transform: uppercase;
+	text-transform: uppercase;	
 }
 main table tr{
 	/*border-bottom:1px solid #CCC;*/
@@ -236,7 +236,7 @@ main .table-btn .btn .add{
 }
 
 .modal .modal-content .modal-header span{
-	padding: 10px 15px 0 0;
+	padding: 10px 15px 0 0;	
 	font-size: 26px;
 	cursor: pointer;
 	text-align: center;
@@ -286,7 +286,7 @@ main .table-btn .btn .add{
 .modal .modal-content .modal-body form .btn-center button{
 	font-family: Rambla;
 	color: #F4F4F4;
-	font-size: 30px;
+	font-size: 30px;	
 	background: #2D9CDB;
 	border-radius: 50px;
 	border:none;
@@ -303,7 +303,7 @@ footer{
 	background-color: #3C8AB8;
 	color: #FFF;
 	font-family: Rambla;
-
+	
 }
 
 footer .foot{
