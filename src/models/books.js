@@ -49,3 +49,64 @@ exports.updateBook = (obj, cb) => {
     }
   });
 };
+
+// delete book
+exports.deleteBook = (obj, cb) => {
+  const sql = {
+    text: `DELETE FROM books WHERE id = $1`,
+    values: [obj.id]
+  };
+  connection.query(sql, (err, result) => {
+    if (err) {
+      const errdelete = new error('Cant make Delete');
+    } else {
+      cb(null, result.rows[0]);
+    }
+  });
+};
+
+// search book by title
+exports.searchBookByTitle = (obj, cb) => {
+  const sql = {
+    text: `SELECT title,isbn,version,auther,img_url FROM books WHERE title = $1`,
+    values: [obj.title]
+  };
+  connection.query(sql, (err, result) => {
+    if (err) {
+      const errsearch = new error('Cant make search');
+    } else {
+      cb(null, result.rows[0]);
+    }
+  });
+};
+
+// search book by auther
+exports.searchBookByAuther = (obj, cb) => {
+  const sql = {
+    text: `SELECT title,isbn,version,auther,img_url FROM books WHERE auther = $1`,
+    values: [obj.auther]
+  };
+  connection.query(sql, (err, result) => {
+    if (err) {
+      const errsearch = new error('Cant make search');
+    } else {
+      cb(null, result.rows[0]);
+    }
+  });
+};
+
+// search book by ISBN
+exports.searchBookByISBN = (obj, cb) => {
+  const sql = {
+    text: `SELECT title,isbn,version,auther,img_url FROM books WHERE isbn = $1`,
+    values: [obj.isbn]
+  };
+  connection.query(sql, (err, result) => {
+    if (err) {
+      const errsearch = new error('Cant make search');
+    } else {
+      cb(null, result.rows[0]);
+    }
+  });
+};
+
