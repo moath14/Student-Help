@@ -1,4 +1,4 @@
-const connection = require('../Database/db_connection.js');
+const connection = require('./database/db_connection.js');
 require('env2')('./config.env');
 
 //  add book
@@ -10,7 +10,7 @@ exports.addBook = (obj, cb) => {
   };
   connection.query(sql, (err, result) => {
     if (err) {
-      const existed = new error('Existed Book');
+      const existed = new Error('Existed Book');
       cb(existed);
     } else {
       cb(null, result);
@@ -19,21 +19,21 @@ exports.addBook = (obj, cb) => {
 };
 
 //  add All info book
-exports.addBook = (obj, cb) => {
-  const sql = {
-    text: `INSERT INTO books (title,isbn,version,auther,img_url,status,booking_date) VALUES ($1,$2,$3,$4,$5,$6,$6)`,
-    values: [obj.title, obj.isbn, obj.version, obj.auther, obj.img_url, obj.status, obj.booking_date]
+// exports.addBook = (obj, cb) => {
+//   const sql = {
+//     text: `INSERT INTO books (title,isbn,version,auther,img_url,status,booking_date) VALUES ($1,$2,$3,$4,$5,$6,$6)`,
+//     values: [obj.title, obj.isbn, obj.version, obj.auther, obj.img_url, obj.status, obj.booking_date]
 
-  };
-  connection.query(sql, (err, result) => {
-    if (err) {
-      const existed = new error('Existed Book');
-      cb(existed);
-    } else {
-      cb(null, result);
-    }
-  });
-};
+//   };
+//   connection.query(sql, (err, result) => {
+//     if (err) {
+//       const existed = new error('Existed Book');
+//       cb(existed);
+//     } else {
+//       cb(null, result);
+//     }
+//   });
+// };
 
 // update book
 exports.updateBook = (obj, cb) => {
@@ -43,7 +43,8 @@ exports.updateBook = (obj, cb) => {
   };
   connection.query(sql, (err, result) => {
     if (err) {
-      const errupdate = new error('Cant make Update');
+      const errupdate = new Error('Cant make Update');
+      cb(errupdate);
     } else {
       cb(null, result.rows[0]);
     }
@@ -58,7 +59,8 @@ exports.deleteBook = (obj, cb) => {
   };
   connection.query(sql, (err, result) => {
     if (err) {
-      const errdelete = new error('Cant make Delete');
+      const errdelete = new Error('Cant make Delete');
+      cb(errdelete);
     } else {
       cb(null, result.rows[0]);
     }
@@ -73,7 +75,8 @@ exports.searchBookByTitle = (obj, cb) => {
   };
   connection.query(sql, (err, result) => {
     if (err) {
-      const errsearch = new error('Cant make search');
+      const errsearch = new Error('Cant make search');
+      cb(errsearch);
     } else {
       cb(null, result.rows[0]);
     }
@@ -88,7 +91,8 @@ exports.searchBookByAuther = (obj, cb) => {
   };
   connection.query(sql, (err, result) => {
     if (err) {
-      const errsearch = new error('Cant make search');
+      const errsearch = new Error('Cant make search');
+      cb(errsearch);
     } else {
       cb(null, result.rows[0]);
     }
@@ -103,10 +107,25 @@ exports.searchBookByISBN = (obj, cb) => {
   };
   connection.query(sql, (err, result) => {
     if (err) {
-      const errsearch = new error('Cant make search');
+      const errsearch = new Error('Cant make search');
+      cb(errsearch);
     } else {
       cb(null, result.rows[0]);
     }
   });
 };
 
+// show all books
+exports.showAllBooks = (cb) => {
+  const sql = {
+    text: `SELECT title,isbn,version,auther,img_url FROM books`
+  };
+  connection.query(sql, (err, result) => {
+    if (err) {
+      const errShow = new Error('Cant make show books');
+      cb(errShow);
+    } else {
+      cb(null, result.rows[0]);
+    }
+  });
+};
