@@ -10,6 +10,8 @@ const loginController = require('./loginController');
 const logoutController = require('./logoutController');
 const bookController = require('./bookController');
 const searchController = require('./searchController');
+const profileController = require('./profileController');
+
 
 
 router.get('/home', home.get);
@@ -36,5 +38,8 @@ router.post('/addbook', bookController.post);
 router.get('/search',searchController.get);
 // router.post('/search', searchController.post);
 
+
+// function for profileController
+router.get('/profile',profileController.get);
 
 module.exports = router;
