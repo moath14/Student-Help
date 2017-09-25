@@ -7,7 +7,7 @@ exports.hash = (password,cb) => {
     }
     cb(null, hash);
   });
-}
+};
 
 exports.compare = (password,hash,cb) => {
   bcrypt.compare(password, hash, (err, isMatch) => {
