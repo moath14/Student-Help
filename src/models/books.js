@@ -10,7 +10,7 @@ exports.addBook = (obj, cb) => {
   };
   connection.query(sql, (err, result) => {
     if (err) {
-      const existed = new error('Existed Book');
+      const existed = new Error('Existed Book');
       cb(existed);
     } else {
       cb(null, result);
@@ -43,7 +43,8 @@ exports.updateBook = (obj, cb) => {
   };
   connection.query(sql, (err, result) => {
     if (err) {
-      const errupdate = new error('Cant make Update');
+      const errupdate = new Error('Cant make Update');
+      cb(errupdate);
     } else {
       cb(null, result.rows[0]);
     }
@@ -58,7 +59,8 @@ exports.deleteBook = (obj, cb) => {
   };
   connection.query(sql, (err, result) => {
     if (err) {
-      const errdelete = new error('Cant make Delete');
+      const errdelete = new Error('Cant make Delete');
+      cb(errdelete);
     } else {
       cb(null, result.rows[0]);
     }
@@ -73,7 +75,8 @@ exports.searchBookByTitle = (obj, cb) => {
   };
   connection.query(sql, (err, result) => {
     if (err) {
-      const errsearch = new error('Cant make search');
+      const errsearch = new Error('Cant make search');
+      cb(errsearch);
     } else {
       cb(null, result.rows[0]);
     }
@@ -88,7 +91,8 @@ exports.searchBookByAuther = (obj, cb) => {
   };
   connection.query(sql, (err, result) => {
     if (err) {
-      const errsearch = new error('Cant make search');
+      const errsearch = new Error('Cant make search');
+      cb(errsearch);
     } else {
       cb(null, result.rows[0]);
     }
@@ -103,7 +107,8 @@ exports.searchBookByISBN = (obj, cb) => {
   };
   connection.query(sql, (err, result) => {
     if (err) {
-      const errsearch = new error('Cant make search');
+      const errsearch = new Error('Cant make search');
+      cb(errsearch);
     } else {
       cb(null, result.rows[0]);
     }
@@ -117,10 +122,10 @@ exports.showAllBooks = (cb) => {
   };
   connection.query(sql, (err, result) => {
     if (err) {
-      const errshow = new error('Cant make show books');
+      const errShow = new Error('Cant make show books');
+      cb(errShow);
     } else {
       cb(null, result.rows[0]);
     }
   });
 };
-

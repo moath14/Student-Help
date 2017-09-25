@@ -36,7 +36,7 @@ if(err)
 // git user by only email
 exports.getUserByemail = (email,cb)=>{
   const sql = {
-    text : `SELECT email FROM students WHERE email = $1`,
+    text : `SELECT * FROM students WHERE email = $1`,
     values: [email]
   };
 connection.query(sql ,(err,result) =>{
