@@ -1,11 +1,11 @@
 const connection = require('./database/db_connection.js');
 require('env2')('./config.env');
 
-//  add book
+// add book
 exports.addBook = (obj, cb) => {
   const sql = {
-    text: `INSERT INTO books (title,isbn,version,auther,img_url) VALUES ($1,$2,$3,$4,$5)`,
-    values: [obj.title, obj.isbn, obj.version, obj.auther, obj.img_url]
+    text: `INSERT INTO books (title,isbn,version,auther,img_url,creator_email) VALUES ($1,$2,$3,$4,$5,$6)`,
+    values: [obj.title, obj.isbn, obj.version, obj.auther, obj.img_url,obj.creator_email]
 
   };
   connection.query(sql, (err, result) => {
@@ -17,12 +17,14 @@ exports.addBook = (obj, cb) => {
     }
   });
 };
+//
 
-//  add All info book
-// exports.addBook = (obj, cb) => {
-//   const sql = {
-//     text: `INSERT INTO books (title,isbn,version,auther,img_url,status,booking_date) VALUES ($1,$2,$3,$4,$5,$6,$6)`,
-//     values: [obj.title, obj.isbn, obj.version, obj.auther, obj.img_url, obj.status, obj.booking_date]
+
+exports.addBook = (obj, cb) => {
+  const sql = {
+    text: `INSERT INTO books (title,isbn,version,auther,img_url,status,booking_date) VALUES ($1,$2,$3,$4,$5,$6,$6)`,
+    values: [obj.title, obj.isbn, obj.version, obj.auther, obj.img_url, obj.status, obj.booking_date]
+
 
 //   };
 //   connection.query(sql, (err, result) => {
@@ -125,7 +127,9 @@ exports.showAllBooks = (cb) => {
       const errShow = new Error('Cant make show books');
       cb(errShow);
     } else {
-      cb(null, result.rows[0]);
+
+      cb(null, result.rows);
+
     }
   });
 };

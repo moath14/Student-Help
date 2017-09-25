@@ -15,14 +15,14 @@ CREATE TABLE "students" (
 CREATE TABLE "books" (
 	"id" serial NOT NULL,
 	"title" varchar NOT NULL,
-	"isbn" varchar NOT NULL,
-	"version" varchar NOT NULL,
+	"isbn" varchar,
+	"version" varchar,
 	"auther" varchar NOT NULL,
 	"img_url" varchar NOT NULL,
 	"creator_email" varchar NOT NULL,
 	"status" varchar NOT NULL DEFAULT 'available',
-	"borrower_email" varchar NOT NULL,
-	"booking_date" TIMESTAMP NOT NULL,
+	"borrower_email" varchar,
+	"booking_date" TIMESTAMP,
 	CONSTRAINT books_pk PRIMARY KEY ("id")
 ) WITH (
   OIDS=FALSE

@@ -10,7 +10,7 @@
     const password = req.body.password
     // get user by email
   userModel.getUserByemail(email,(error, userObj) => {
-    console.log(userObj);
+    //console.log(userObj);
       if(error){
         return next(error)
       }
@@ -23,6 +23,8 @@
       if(!isMatch) {
         return res.redirect('/login')
       }
+      // we must set token in Cookies
+      res.cookie('email',email)
       return res.redirect('/home')
 
     });

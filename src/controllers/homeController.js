@@ -1,7 +1,21 @@
 const book = require('../models/books.js');
 
 exports.get = (req, res, next) => {
-  book.get.showAllBooks((err, data) => {
+
+  book.showAllBooks((err, books) => {
+    if (err) {
+      next(err);
+    } else {
+      res.render('home', {books});
+
+    }
+  });
+};
+
+exports.post = (req, res, next) => {
+
+  book.searchBookByTitle((err, data) => {
+
     if (err) {
       next(err);
     } else {
@@ -11,7 +25,9 @@ exports.get = (req, res, next) => {
 };
 
 exports.post = (req, res, next) => {
-  book.post.searchBookByTitle((err, data) => {
+
+  book.searchBookByAuther((err, data) => {
+
     if (err) {
       next(err);
     } else {
@@ -21,17 +37,9 @@ exports.post = (req, res, next) => {
 };
 
 exports.post = (req, res, next) => {
-  book.post.searchBookByAuther((err, data) => {
-    if (err) {
-      next(err);
-    } else {
-      res.render('home', {data});
-    }
-  });
-};
 
-exports.post = (req, res, next) => {
-  book.post.searchBookByISBN((err, data) => {
+  book.searchBookByISBN((err, data) => {
+
     if (err) {
       next(err);
     } else {
