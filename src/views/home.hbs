@@ -2,7 +2,7 @@
 
     <section class="sec-slide">
       <div class="container">
-        <p>share your used books and help others <br> 
+        <p>share your used books and help others <br>
           grow for free</p>
       </div>
     </section>
@@ -14,141 +14,24 @@
       <div class="container">
         <h2>Recently added</h2>
         <div class="cont-book">
+{{#each books}}
           <div class="book-img-info">
             <div class="photo">
-              <img src="assets/calc.jpg">
+              <img src="{{this.img_url}}">
             </div>
             <div class="photo-info">
-              <p class="name">thomas calculus</p>
-              <p class="isbn font">83765482263</p>
-              <p class="author font">jorge b. thomas</p>
-              <p class="version font">13 edition</p>
+              <p class="name">{{this.title}}</p>
+              <p class="isbn font">{{this.isbn}}</p>
+              <p class="author font">{{this.auther}}</p>
+              <p class="version font">{{this.version}}</p>
               <div class="btn-bor">
                 <button>borrow</button>
               </div>
             </div>
           </div>
-          <div class="book-img-info">
-            <div class="photo">
-              <img src="assets/calc.jpg">
-            </div>
-            <div class="photo-info">
-              <p class="name">thomas calculus</p>
-              <p class="isbn font">83765482263</p>
-              <p class="author font">jorge b. thomas</p>
-              <p class="version font">13 edition</p>
-              <div class="btn-bor">
-                <button>borrow</button>
-              </div>
-            </div>
-          </div>
-          <div class="book-img-info">
-            <div class="photo">
-              <img src="assets/calc.jpg">
-            </div>
-            <div class="photo-info">
-              <p class="name">thomas calculus</p>
-              <p class="isbn font">83765482263</p>
-              <p class="author font">jorge b. thomas</p>
-              <p class="version font">13 edition</p>
-              <div class="btn-bor">
-                <button>borrow</button>
-              </div>
-            </div>
-          </div>
-          <div class="book-img-info">
-            <div class="photo">
-              <img src="assets/calc.jpg">
-            </div>
-            <div class="photo-info">
-              <p class="name">thomas calculus</p>
-              <p class="isbn font">83765482263</p>
-              <p class="author font">jorge b. thomas</p>
-              <p class="version font">13 edition</p>
-              <div class="btn-bor">
-                <button>borrow</button>
-              </div>
-            </div>
-          </div>
-          <!--
-          <div class="book-img-info">
-            <div class="photo">
-              <img src="assets/calc.jpg">
-            </div>
-            <div class="photo-info">
-              <p class="name">thomas calculus</p>
-              <p class="isbn font">83765482263</p>
-              <p class="author font">jorge b. thomas</p>
-              <p class="version font">13 edition</p>
-              <div class="btn-bor">
-                <button>borrow</button>
-              </div>
-            </div>
-          </div>
-          
-          <div class="book-img-info">
-            <div class="photo">
-              <img src="assets/calc.jpg">
-            </div>
-            <div class="photo-info">
-              <p class="name">thomas calculus</p>
-              <p class="isbn">83765482263</p>
-              <p class="author">jorge b. thomas</p>
-              <p class="version">13 edition</p>
-              <button>borrow</button>
-            </div>
-          </div>
-          <div class="book-img-info">
-            <div class="photo">
-              <img src="assets/calc.jpg">
-            </div>
-            <div class="photo-info">
-              <p class="name">thomas calculus</p>
-              <p class="isbn">83765482263</p>
-              <p class="author">jorge b. thomas</p>
-              <p class="version">13 edition</p>
-              <button>borrow</button>
-            </div>
-          </div>
-          <div class="book-img-info">
-            <div class="photo">
-              <img src="assets/calc.jpg">
-            </div>
-            <div class="photo-info">
-              <p class="name">thomas calculus</p>
-              <p class="isbn">83765482263</p>
-              <p class="author">jorge b. thomas</p>
-              <p class="version">13 edition</p>
-              <button>borrow</button>
-            </div>
-          </div>
-          <div class="book-img-info">
-            <div class="photo">
-              <img src="assets/calc.jpg">
-            </div>
-            <div class="photo-info">
-              <p class="name">thomas calculus</p>
-              <p class="isbn">83765482263</p>
-              <p class="author">jorge b. thomas</p>
-              <p class="version">13 edition</p>
-              <button>borrow</button>
-            </div>
-          </div>
-          <div class="book-img-info">
-            <div class="photo">
-              <img src="assets/calc.jpg">
-            </div>
-            <div class="photo-info">
-              <p class="name">thomas calculus</p>
-              <p class="isbn">83765482263</p>
-              <p class="author">jorge b. thomas</p>
-              <p class="version">13 edition</p>
-              <button>borrow</button>
-            </div>
-          </div>
-            -->                         
+{{/each}}
         </div>
-        <a href="more-book.html" target="_blank"><p class="more">more books <span class='arrow'>&raquo;</span></p></a>        
+        <a href="more-book.html" target="_blank"><p class="more">more books <span class='arrow'>&raquo;</span></p></a>
       </div>
     </section>
 
@@ -171,7 +54,7 @@
               <br>
               <label>by isbn</label><br>
               <input type="text" name="isbn"><br><br><br>
-              <button>search</button> 
+              <button>search</button>
             </form>
           </div>
           <div class="info-book">
@@ -220,7 +103,7 @@
               <a href="#"><i class="fa fa-github-square fa-2x" aria-hidden="true"></i></a>
               <a href="#"><i class="fa fa-facebook-square fa-2x" aria-hidden="true"></i></a>
               <a href="#"><i class="fa fa-twitter-square fa-2x" aria-hidden="true"></i></a>
-            </div>            
+            </div>
           </div>
           <div class="mahmoud bord">
             <div class="photo">
@@ -232,12 +115,10 @@
               <a href="#"><i class="fa fa-github-square fa-2x" aria-hidden="true"></i></a>
               <a href="#"><i class="fa fa-facebook-square fa-2x" aria-hidden="true"></i></a>
               <a href="#"><i class="fa fa-twitter-square fa-2x" aria-hidden="true"></i></a>
-            </div>            
+            </div>
           </div>
         </div>
       </div>
     </main>
 
     <!-- end out team -->
-
-    
