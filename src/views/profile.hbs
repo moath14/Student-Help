@@ -1,102 +1,106 @@
-		<section>
-			<div class="container">
-				<div class="user">
-					<div class="photo">
-						<img src="assets/gha.jpg">
-					</div>
-					<div class="information">
-						<h2>Ghadeer Abed El-Nabi</h2>
-						<p> Eng.ghadeer93@gmail.com</p>
-					</div>
-				</div>
-			</div>
-		</section>
+<!-- end navbar -->
 
-		<!-- end user -->		
-		<hr>
-		<!-- start board -->
-		<main>
-			<div class="container">
-				<div class="table-btn">
-					<table rules="none">
-						<caption>dashboard</caption>
-						<tr class="hed-font">
-							<th>id</th>
-							<th>name</th>
-							<th>author</th>
-							<th>version</th>
-							<th>isbn</th>
-							<th>status</th>
-							<th></th>
-							<th></th>
-						</tr>
-						<tr>
-							<td>1</td>
-							<td>thomas calculus</td>
-							<td>joerge b. thomas</td>
-							<td>13 edition</td>
-							<td>832746827364</td>
-							<td>true</td>
-							<td><button class="edite">edite</button></td>
-							<td><button class="del">delete</button></td>
-						</tr>
-						<tr>
-							<td>2</td>
-							<td>thomas calculus</td>
-							<td>joerge b. thomas</td>
-							<td>13 edition</td>
-							<td>832746827364</td>
-							<td>true</td>
-							<td><button class="edite">edite</button></td>
-							<td><button class="del">delete</button></td>
-						</tr>
-						<tr>
-							<td>3</td>
-							<td>thomas calculus</td>
-							<td>joerge b. thomas</td>
-							<td>13 edition</td>
-							<td>832746827364</td>
-							<td>true</td>
-							<td><button class="edite">edite</button></td>
-							<td><button class="del">delete</button></td>
-						</tr>	
-					</table>
-					<div class="btn">
-						<button id="mybtn" class="add">add</button>
-					</div>				
-				</div>
-			</div>
-		</main>
-		<!-- end board -->
+<!-- start user -->
 
-		<!-- start modal box -->
-		<div id="mymodal" class="modal">
-			<div class="container">
-				<div class="modal-content">
-					<div class="modal-header">
-						<span class="close">&times;</span>
-						<h2>add book</h2>
-					</div>
-					<div class="modal-body">
-						<form id="form" action="/" method="POST">
-							<label>title</label><br>
-							<input type="text" name="title">
-							<br><br>
-							<label>author</label><br>
-							<input type="text" name="author">
-							<br><br>
-							<label>version</label><br>
-							<input type="text" name="version">
-							<br><br>
-							<label>isbn</label><br>
-							<input type="text" name="isbn">
-							<br><br><br>
-							<div class="btn-center">
-								<button>add book</button>
-							</div>
-						</form>
-					</div>
-				</div>				
+<section>
+	<div class="container">
+		<div class="user">
+			<div class="photo">
+				<img src="assets/gha.jpg">
 			</div>
-			
+			<div class="information">
+				<h2>Ghadeer Abed El-Nabi</h2>
+				<p> Eng.ghadeer93@gmail.com</p>
+			</div>
 		</div>
+	</div>
+</section>
+
+<!-- end user -->
+<hr>
+<!-- start board -->
+<main>
+	<div class="container">
+		<div class="table-btn">
+			<table rules="none">
+				<caption>dashboard</caption>
+				<tr class="hed-font">
+					<th>id</th>
+					<th>name</th>
+					<th>author</th>
+					<th>version</th>
+					<th>isbn</th>
+					<th>status</th>
+					<th></th>
+					<th></th>
+				</tr>
+				<tr>
+					<td>1</td>
+					<td>thomas calculus</td>
+					<td>joerge b. thomas</td>
+					<td>13 edition</td>
+					<td>832746827364</td>
+					<td>true</td>
+					<td><button class="edite">edite</button></td>
+					<td><button class="del">delete</button></td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td>thomas calculus</td>
+					<td>joerge b. thomas</td>
+					<td>13 edition</td>
+					<td>832746827364</td>
+					<td>true</td>
+					<td><button class="edite">edite</button></td>
+					<td><button class="del">delete</button></td>
+				</tr>
+				<tr>
+					<td>3</td>
+					<td>thomas calculus</td>
+					<td>joerge b. thomas</td>
+					<td>13 edition</td>
+					<td>832746827364</td>
+					<td>true</td>
+					<td><button class="edite">edite</button></td>
+					<td><button class="del">delete</button></td>
+				</tr>
+			</table>
+			<div class="btn">
+				<button id="mybtn" class="add">add</button>
+			</div>
+		</div>
+	</div>
+</main>
+<!-- end board -->
+
+<!-- start modal box -->
+<div id="mymodal" class="modal">
+	<div class="container">
+		<div class="modal-content">
+			<div class="modal-header">
+				<span class="close">&times;</span>
+				<h2>add book</h2>
+			</div>
+			<div class="modal-body">
+				<form id="form" action="/" method="POST">
+					<label>title</label><br>
+					<input type="text" name="title">
+					<br><br>
+					<label>author</label><br>
+					<input type="text" name="author">
+					<br><br>
+					<label>version</label><br>
+					<input type="text" name="version">
+					<br><br>
+					<label>isbn</label><br>
+					<input type="text" name="isbn">
+					<br><br><br>
+					<div class="btn-center">
+						<button>add book</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+</div>
