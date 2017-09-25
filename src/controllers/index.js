@@ -3,6 +3,7 @@ const router = express.Router();
 
 const home = require('./homeController');
 
+
 const auth = require('../middlewares/auth.js');
 const signupController = require('./signupController');
 const loginController = require('./loginController');
@@ -10,11 +11,13 @@ const logoutController = require('./logoutController');
 const bookController = require('./bookController');
 const searchController = require('./searchController');
 
+
 router.get('/home', home.get);
 router.post('/home', home.post);
 
 router.get('/signup', signupController.get);
 router.post('/signup', signupController.post);
+router.post('/addBook', bookController.post);
 
 
 // function for loginController
