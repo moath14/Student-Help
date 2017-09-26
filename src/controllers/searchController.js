@@ -1,8 +1,9 @@
 const bookModel = require('../models/books.js');
 
-exports.get = (req,res) => {
-  res.render('search')
-}
+exports.get = (req, res) => {
+  const user = req.user;
+  res.render('search', {user});
+};
 
 exports.search = (req, res, next) => {
   // take keyword search from student

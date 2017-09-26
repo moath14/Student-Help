@@ -6,8 +6,13 @@
 						<a href="/home"><h1>student help</h1></a>
 					</div>
 					<div class="log-sign">
-						<a href="/login" ><p>login</p></a>
-						<a href="/signup" target="_blank"><p>signup</p></a>
+						{{#if user}}
+						<a href="/logout"><p>logout</p></a>
+						<a href="/profile"><p>{{user}}</p></a>
+						{{else}}
+						<a href="/login"><p>login</p></a>
+						<a href="/signup" ><p>signup</p></a>
+						{{/if}}
 					</div>
 				</div>
 			</div>

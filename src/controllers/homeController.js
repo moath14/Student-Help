@@ -1,11 +1,12 @@
 const book = require('../models/books.js');
 
 exports.get = (req, res, next) => {
+  const user = req.user;
   book.showAllBooks((err, books) => {
     if (err) {
       next(err);
     } else {
-      res.render('home', {books});
+      res.render('home', {books, user});
     }
   });
 };

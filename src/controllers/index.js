@@ -9,7 +9,7 @@ const logoutController = require('./logoutController');
 const bookController = require('./bookController');
 const searchController = require('./searchController');
 const profileController = require('./profileController');
-const moreBookController = require('./moreBookController')
+const moreBookController = require('./moreBookController');
 
 
 router.get('/', home.get)
@@ -24,14 +24,14 @@ router.get('/signup', signupController.get);
 router.post('/signup', signupController.post);
 
 // function for loginController
-router.get('/login',loginController.get);
-router.post('/login',loginController.post);
+router.get('/login', loginController.get);
+router.post('/login', loginController.post);
 
 // function for logoutController
-router.get('/logout',loginController.get);
-router.post('/logout',loginController.post);
-
-//funation for bookController
+// router.get('/logout',loginController.get);
+// router.post('/logout',loginController.post);
+router.get('/logout', logoutController.get);
+// funation for bookController
 router.post('/addbook', bookController.post);
 
 //funation for searchController
@@ -41,12 +41,10 @@ router.get('/search',searchController.get);
 // router.post('/search', searchController.post);
 
 // function for profileController
-router.get('/profile',profileController.get);
-router.get('/deleteBook/:id',profileController.delete);
+router.get('/profile', profileController.get);
+router.get('/deleteBook/:id', profileController.delete);
 
 // function for moreBookController
-router.get('/moreBook',moreBookController.get);
-
-
+router.get('/moreBook', moreBookController.get);
 
 module.exports = router;
