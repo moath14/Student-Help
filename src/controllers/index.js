@@ -9,6 +9,7 @@ const logoutController = require('./logoutController');
 const bookController = require('./bookController');
 const searchController = require('./searchController');
 const profileController = require('./profileController');
+const moreBookController = require('./moreBookController')
 
 router.get('/home', home.get);
 
@@ -28,14 +29,17 @@ router.post('/addbook', bookController.post);
 
 //funation for searchController
 router.get('/search',searchController.get);
-router.post('/search',searchController.postTitle);
-router.post('/search',searchController.postAuther);
-router.post('/search',searchController.postISBN);
+router.post('/search/:keyword',searchController.post);
 
 // router.post('/search', searchController.post);
 
 // function for profileController
 router.get('/profile',profileController.get);
 router.get('/deleteBook/:id',profileController.delete);
+
+// function for moreBookController
+router.get('/moreBook',moreBookController.get);
+
+
 
 module.exports = router;

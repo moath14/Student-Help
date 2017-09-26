@@ -14,6 +14,9 @@
       if(error){
         return next(error)
       }
+      if(!userObj){
+        return res.redirect('/login')
+      }
       // make compare "password" && hashPassword
     compare(password,userObj.password,(err,isMatch) => {
 
