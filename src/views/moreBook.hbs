@@ -1,0 +1,25 @@
+<!-- start book added -->
+<section class="sec-book-add" id="boooook">
+  <div class="container">
+    <h2>Recently added</h2>
+    <div class="cont-book">
+      {{#each books}}
+      <div class="book-img-info">
+        <div class="photo">
+          <img src="{{this.img_url}}">
+        </div>
+        <div class="photo-info">
+          <p class="name">{{this.title}}</p>
+          <p class="isbn font">{{this.isbn}}</p>
+          <p class="author font">{{this.auther}}</p>
+          <p class="version font">{{htis.version}}</p>
+          <div class="btn-bor">
+            <button>borrow</button>
+          </div>
+        </div>
+      </div>
+      {{/each}}
+    </div>
+  </div>
+</section>
+<!-- end book added -->

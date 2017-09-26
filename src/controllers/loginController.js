@@ -15,8 +15,10 @@
         return next(error)
       }
       if(!userObj){
+
         return res.render('login',{errorMessage:'password or email are not correct'});
       }
+
 
       // make compare "password" && hashPassword
     compare(password,userObj.password,(err,isMatch) => {
