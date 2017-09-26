@@ -4,23 +4,16 @@
     <div class="ser-book">
       <div class="form">
         <h2>search</h2><br><br>
-        <form action="/search" method="post">
-          <label>By Title</label><br>
-          <input type="text" name="title"><br><br>
-          <p class="or">OR</p>
+        <form  id ="search_form" method="post" onsubmit="return true">
+          <input type="text" id='keyword' name="keyword"><br><br>
           <br>
-          <label>By Author</label><br>
-          <input type="text" name="author"><br><br>
-          <p class="or">AND</p>
-          <br>
-          <label>By ISBN</label><br>
-          <input type="text" name="isbn"><br><br><br>
-          <button <a href ="/search/:keyword/{{this.id}}></a> >search</button>
+          <button type="submit"> search</button>
         </form>
       </div>
       <div class="info-book">
         <h2>result</h2>
-        {{#if title}}
+        {{#if data}}
+      {{#each data}}
         <div class="data-book">
           <div class="img">
             <img src="{{this.img_url}}">
@@ -32,6 +25,7 @@
             <p>{{this.version}}</p>
           </div>
         </div>
+        {{/each}}
         {{/if}}
       </div>
     </div>
