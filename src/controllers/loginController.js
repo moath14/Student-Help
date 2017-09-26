@@ -15,8 +15,11 @@
         return next(error)
       }
       if(!userObj){
-        return res.redirect('/login')
+
+        return res.render('login',{errorMessage:'password or email are not correct'});
       }
+
+
       // make compare "password" && hashPassword
     compare(password,userObj.password,(err,isMatch) => {
 
@@ -24,7 +27,7 @@
         return res.redirect('/login')
       }
       if(!isMatch) {
-        return res.redirect('/login')
+        return res.render('login',{errorMessage:' password are not correct'})
       }
       // we must set token in Cookies
       res.cookie('email',email)
