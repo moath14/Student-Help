@@ -1,0 +1,39 @@
+<!-- start search about book -->
+<aside id="search">
+  <div class="container">
+    <div class="ser-book">
+      <div class="form">
+        <h2>search</h2><br><br>
+        <form action="/search" method="post">
+          <label>By Title</label><br>
+          <input type="text" name="title"><br><br>
+          <p class="or">OR</p>
+          <br>
+          <label>By Author</label><br>
+          <input type="text" name="author"><br><br>
+          <p class="or">AND</p>
+          <br>
+          <label>By ISBN</label><br>
+          <input type="text" name="isbn"><br><br><br>
+          <button <a href ="/search/:keyword/{{this.id}}></a> >search</button>
+        </form>
+      </div>
+      <div class="info-book">
+        <h2>result</h2>
+        {{#if title}}
+        <div class="data-book">
+          <div class="img">
+            <img src="{{this.img_url}}">
+          </div>
+          <div class="data">
+            <p>{{this.title}}</p>
+            <p>{{this.isbn}}</p>
+            <p>{{this.auther}}</p>
+            <p>{{this.version}}</p>
+          </div>
+        </div>
+        {{/if}}
+      </div>
+    </div>
+  </div>
+</aside>
