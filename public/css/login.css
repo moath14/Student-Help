@@ -93,7 +93,12 @@ section .form{
 	padding-top: 15px;
 }
 
-
+section .form form .red-msg{
+	color: red;
+	/*display: none;*/
+	
+	
+}
 
 section .form form label{
 	color: #AAA5A5;
