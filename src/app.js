@@ -39,5 +39,18 @@ app.use((req,res,next) => {
   console.log("User",req.user);
   next()
 })
+// take user name
+app.use((req,res,next) => {
+  if(req.cookies.name){
+    req.user = req.cookies.name
+  }
+  console.log("cookies",req.cookies);
+  next()
+})
+app.use((req,res,next) => {
+  console.log("User",req.user);
+  next()
+})
+
 app.use(controllers);
 module.exports = app;
