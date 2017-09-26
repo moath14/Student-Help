@@ -11,7 +11,7 @@ exports.addBook = (book, cb) => {
   connection.query(sql, (err, result) => {
     console.log(err);
     if (err) {
-      const existed = new error('Existed Book');
+      const existed = new Error('Existed Book');
       cb(existed);
     } else {
       cb(null, result);
@@ -21,9 +21,12 @@ exports.addBook = (book, cb) => {
 
 
 // search book by title
-exports.searchBookByTitle = (title, cb) => {
+exports.searchBookByTitle = (title,cb) => {
+  console.log(title);
   const sql = {
-    text: `SELECT title,isbn,version,auther,img_url FROM books WHERE title like $1`,
+    text: `SELECT title,isbn,version,auther,img_url
+    FROM books
+     WHERE lower(title) like $1 OR lower(auther) like $1 OR lower(isbn) like $1 limit 1`,
     values: [`%${title}%`]
   };
   connection.query(sql, (err, result) => {
@@ -31,7 +34,8 @@ exports.searchBookByTitle = (title, cb) => {
       const errsearch = new Error('Cant make search');
       cb(errsearch);
     } else {
-      cb(null, result.rows[0]);
+      console.log(result.rows);
+      cb(null, result.rows);
     }
   });
 };
@@ -43,6 +47,23 @@ exports.searchBookByTitle = (title, cb) => {
 exports.showAllBooks = (cb) => {
   const sql = {
     text: `SELECT title,isbn,version,auther,img_url FROM books`
+  };
+  connection.query(sql, (err, result) => {
+    if (err) {
+      const errShow = new Error('Cant make show books');
+      cb(errShow);
+    } else {
+
+      cb(null, result.rows);
+
+    }
+  });
+};
+
+// show all books
+exports.showFourBooks = (cb) => {
+  const sql = {
+    text: `SELECT title,isbn,version,auther,img_url FROM books limit 4`
   };
   connection.query(sql, (err, result) => {
     if (err) {
