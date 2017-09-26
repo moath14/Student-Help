@@ -1,12 +1,19 @@
 const bookModel = require('../models/books');
+const userModel = require('../models/users');
 
 exports.get = (req, res, next) => {
   const user = req.user;
-  bookModel.showBooksByUser(user, (err, books) => {
+  userModel.getUserByemail(user, (err, userInfo) => {
     if (err) {
       return next(err);
     }
-    res.render('profile', {books, user});
+    console.log(userInfo);
+    bookModel.showBooksByUser(user, (err, books) => {
+      if (err) {
+        return next(err);
+      }
+      res.render('profile', {books, user, userInfo});
+    });
   });
 };
 
