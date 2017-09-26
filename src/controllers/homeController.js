@@ -11,38 +11,39 @@ exports.get = (req, res, next) => {
   });
 };
 
-exports.getabout = (req,res) => {
-  res.render('about')
-}
+exports.getabout = (req, res) => {
+  const user = req.user;
+  res.render('about', {user});
+};
 
-exports.getbooks = (req,res) => {
+exports.getbooks = (req, res) => {
+  const user = req.user;
   book.showAllBooks((err, books) => {
     if (err) {
       next(err);
     } else {
-      res.render('books', {books});
+      res.render('books', {books, user});
     }
   });
-
-}
-exports.getAllbooks = (req,res) => {
+};
+exports.getAllbooks = (req, res) => {
+  const user = req.user;
   book.showAllBooks((err, books) => {
     if (err) {
       next(err);
     } else {
-      res.render('moreBook', {books});
+      res.render('moreBook', {books, user});
     }
   });
+};
 
-}
-
-exports.get4books = (req,res) => {
+exports.get4books = (req, res) => {
+  const user = req.user;
   book.showFourBooks((err, books) => {
     if (err) {
       next(err);
     } else {
-      res.render('home', {books});
+      res.render('books', {books, user});
     }
   });
-
-}
+};

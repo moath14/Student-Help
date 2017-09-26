@@ -7,12 +7,13 @@ exports.get = (req, res) => {
 
 exports.search = (req, res, next) => {
   // take keyword search from student
-  const keyword = req.body.keyword
-  bookModel.searchBookByTitle(keyword,(err, data) => {
+  const user = req.user;
+  const keyword = req.body.keyword;
+  bookModel.searchBookByTitle(keyword, (err, data) => {
     if (err) {
       next(err);
     } else {
-      res.render('search', {data});
+      res.render('search', {data, user});
     }
   });
 };
