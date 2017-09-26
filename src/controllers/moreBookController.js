@@ -1,7 +1,6 @@
 const bookModel = require('../models/books');
 
-
 exports.get = (req, res) => {
-
-  res.render('moreBook')
-}
+  const user = req.user;
+  res.render('moreBook', {user});
+};
