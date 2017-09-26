@@ -1,11 +1,16 @@
 const userModel = require('../models/users');
 
-
 exports.get = (req, res) => {
+  cookie = req.cookies;
+  for (var prop in cookie) {
+    if (!cookie.hasOwnProperty(prop)) {
+      continue;
+    }
+    res.cookie(prop, '', {expires: new Date(0)});
+  }
+  res.redirect('/home');
+};
 
-  res.render('logout')
-}
+exports.post = (req, res, next) => {
 
-exports.post = (req, res,next) => {
-
-}
+};
