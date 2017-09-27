@@ -84,17 +84,13 @@ nav ul a{
 }
 
 nav ul li:hover{
-	background-color: #FFF;
-	color: #000;
+	color: #87D37C;
 }
 
 /*end navbar*/
 
 
 /*start book added*/
-.sec-book-add{
-	padding-bottom: 26px;
-}
 
 .sec-book-add .cont-book{
 	display: flex;
@@ -149,14 +145,19 @@ nav ul li:hover{
 	border:none;
 	padding: 10px 25px;
 	font-size: 14px;
-	text-transform: capitalize;
 	background-color: #3A539B;
 	outline: none;
 	border-radius: 3px;
 	color: #FFF;
 	cursor: pointer;
+	max-width: 200px;
 }
 
+.sec-book-add .book-img-info .photo-info button a{
+	text-decoration: none;
+	color: #FFF;
+
+}
 .sec-book-add .book-img-info .photo-info button:hover{
 	background-color: #BFBFBF;
 }
