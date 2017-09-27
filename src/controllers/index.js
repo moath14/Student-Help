@@ -15,6 +15,7 @@ router.get('/', home.get)
 .get('/home', home.get)
 .get('/about', home.getabout)
 .get('/books', home.get4books);
+router.post('/home', home.search);
 
 router.get('/signup', signupController.get);
 router.post('/signup', signupController.post);
