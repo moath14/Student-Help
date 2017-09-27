@@ -2,7 +2,7 @@ const book = require('../models/books.js');
 
 exports.get = (req, res, next) => {
   const user = req.user;
-  book.showAllBooks((err, books) => {
+  book.showFourBooks((err, books) => {
     if (err) {
       next(err);
     } else {
