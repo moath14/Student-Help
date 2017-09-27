@@ -41,9 +41,13 @@
 					<td>{{this.version}}</td>
 					<td>{{this.auther}}</td>
 					<td class = 'img-src'><img src = "{{this.img_url}}"></td>
-					
-					<td><button id="mybtn1" class="add" style = "background-color:#2ECC71;outline:none"><a>edit</a></button></td>
-					<td><button class="del" style = "outline:none"><a  href ="/deleteBook/{{this.id}}">delete</a></button></td>
+
+
+					<td><button id="mybtn1" class="add" style = "background-color:#2ECC71;outline:none" onclick="return getdata({{this.id}});">
+						Edit
+					</button></td>
+					<td><button class="del"><a  href ="/deleteBook/{{this.id}}">delete</a></button></td>
+
 				</tr>
 				{{/each}}
 			</table>
@@ -102,21 +106,21 @@
 				<h2>update book</h2>
 			</div>
 			<div class="modal-body">
-				<form id="form" action="/addbook" method="POST">
+				<form id="form" action="/updatebook" method="POST">
 					<label>title</label><br>
-					<input type="text" name="title">
+					<input type="text" name="title" id ='updateModalTitle' >
 					<br><br>
 					<label>auther</label><br>
-					<input type="text" name="auther">
+					<input type="text" name="auther" id ='updateModalAuther'>
 					<br><br>
 					<label>version</label><br>
-					<input type="text" name="version">
+					<input type="text" name="version" id ='updateModalVersion' >
 					<br><br>
 					<label>isbn</label><br>
-					<input type="text" name="isbn">
+					<input type="text" name="isbn" id ='updateModalIsbn'>
 					<br><br>
 					<label>url image</label><br>
-					<input type="text" name="img_url">
+					<input type="text" name="img_url" id ='updateModalImgURL'>
 					<br><br><br>
 					<div class="btn-center">
 						<button type="submit">save</button>
@@ -140,11 +144,24 @@
 </div>
 
 <!-- end msg -->
-
-
-<script src="js/msg.js" type="text/javascript"></script>
 <script src="js/modal-box.js" type="text/javascript"></script>
 <script src="js/modal-box1.js" type="text/javascript"></script>
 <script type="text/javascript">
+	function getdata	(id){
+		fetch('/book/'+id)
+		.then((response)=>{
+			response.json().then(function(data) {
+				document.getElementById("updateModalTitle").value=data.title;
+				document.getElementById("updateModalAuther").value=data.auther;
+				document.getElementById("updateModalVersion").value=data.version;
+				document.getElementById("updateModalIsbn").value=data.isbn;
+				document.getElementById("updateModalImgURL").value=data.img_url;
+				modal1.style.display = 'block'
 
+			      });
+
+		}).catch((err)=>{
+			console.log(err);
+		})
+	}
 </script>
