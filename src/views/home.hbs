@@ -44,7 +44,6 @@
     <!-- end book added -->
 
     <!-- start search about book -->
-    <!-- start search about book -->
     <aside id="search">
       <div class="container">
         <div class="ser-book">
@@ -58,21 +57,22 @@
           </div>
           <div class="info-book">
             <h2>result</h2>
-            {{#if data}}
-          {{#each data}}
-            <div class="data-book">
-              <div class="img">
-                <img src="{{this.img_url}}">
+              {{#if data}}
+              {{#each data}}
+              <div class="data-book">
+                <div class="img">
+                  <img src="{{this.img_url}}">
+                </div>
+                <div class="data">
+                  <p>{{this.title}}</p>
+                  <p>{{this.isbn}}</p>
+                  <p>{{this.auther}}</p>
+                  <p>{{this.version}}</p>
+                  <button><a href="mailto:{{this.creator_email}}">{{this.creator_email}}</a></button>
+                </div>
               </div>
-              <div class="data">
-                <p>{{this.title}}</p>
-                <p>{{this.isbn}}</p>
-                <p>{{this.auther}}</p>
-                <p>{{this.version}}</p>
-              </div>
-            </div>
-            {{/each}}
-            {{/if}}
+              {{/each}}
+              {{/if}}
           </div>
         </div>
       </div>
