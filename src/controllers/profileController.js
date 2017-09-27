@@ -3,16 +3,17 @@ const userModel = require('../models/users');
 
 exports.get = (req, res, next) => {
   const user = req.user;
+  const name = req.name;
   userModel.getUserByemail(user, (err, userInfo) => {
     if (err) {
       return next(err);
     }
-    console.log(userInfo);
+     userInfo=userInfo[0]
     bookModel.showBooksByUser(user, (err, books) => {
       if (err) {
         return next(err);
       }
-      res.render('profile', {books, user, userInfo});
+      res.render('profile', {books, user, userInfo,name});
     });
   });
 };

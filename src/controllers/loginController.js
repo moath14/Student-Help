@@ -14,7 +14,6 @@
     const password = req.body.password;
     // get user by email
     userModel.getUserByemail(email, (error, userObj) => {
-    // console.log(userObj);
       if (error) {
         return next(error);
       }
@@ -23,7 +22,8 @@
       }
 
       // make compare "password" && hashPassword
-      compare(password, userObj.password, (err, isMatch) => {
+
+      compare(password, userObj[0].password, (err, isMatch) => {
         if (err) {
           return res.redirect('/login');
         }
@@ -32,6 +32,7 @@
         }
       // we must set token in Cookies
         res.cookie('email', email);
+        res.cookie('name', userObj[0].name);
         return res.redirect('/home');
       });
     });

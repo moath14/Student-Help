@@ -9,7 +9,6 @@ exports.addBook = (book, cb) => {
 
   };
   connection.query(sql, (err, result) => {
-    console.log(err);
     if (err) {
       const existed = new Error('Existed Book');
       cb(existed);
@@ -21,7 +20,6 @@ exports.addBook = (book, cb) => {
 
 // search book by title
 exports.searchBookByTitle = (title, cb) => {
-  console.log(title);
   const sql = {
     text: `SELECT title,isbn,version,auther,img_url,creator_email
     FROM books
@@ -33,7 +31,6 @@ exports.searchBookByTitle = (title, cb) => {
       const errsearch = new Error('Cant make search');
       cb(errsearch);
     } else {
-      console.log(result.rows);
       cb(null, result.rows);
     }
   });

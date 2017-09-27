@@ -9,8 +9,7 @@ const sql = {
 } ;
 connection.query(sql,(err,result)=> {
   if(err){
-    const existed = new Error('Existed User');
-    cb(existed);
+    cb(err);
   }else {
     cb(null,result)
   }
@@ -45,7 +44,7 @@ if(err)
 {
   const existed = new error('Error in getting all users')
 }else {
-  cb(null,result.rows[0])
+  cb(null,result.rows)
 }
 });
 };
@@ -102,8 +101,8 @@ exports.CheckuserByemail = (email , cb)=>{
     if(err){
         const notexisted = new error('Error in getting  User')
     }else {
-      if(result){
-        cb(null,result.email === email);
+      if(result.length){
+        cb(null,result[0].email === email);
       }else {
         cb(null,false)
       }

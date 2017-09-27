@@ -7,7 +7,6 @@ const cookieParser = require('cookie-parser');
 const app = express();
 
 app.use((req,res,next) => {
-  console.log(req.url,req.method);
   next()
 })
 
@@ -31,24 +30,16 @@ app.use(express.static(path.join(__dirname, '..', 'public')));
 app.use((req,res,next) => {
   if(req.cookies.email){
     req.user = req.cookies.email
+    req.name = req.cookies.name
   }
-  console.log("cookies",req.cookies);
   next()
 })
 app.use((req,res,next) => {
-  console.log("User",req.user);
-  next()
+    next()
 })
 // take user name
+
 app.use((req,res,next) => {
-  if(req.cookies.name){
-    req.user = req.cookies.name
-  }
-  console.log("cookies",req.cookies);
-  next()
-})
-app.use((req,res,next) => {
-  console.log("User",req.user);
   next()
 })
 

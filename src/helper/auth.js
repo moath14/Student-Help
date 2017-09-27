@@ -13,7 +13,7 @@ exports.compare = (password,hash,cb) => {
   bcrypt.compare(password, hash, (err, isMatch) => {
       // res === true
       if(err){
-        return cb(erar);
+        return cb(err);
       }
       cb(null,isMatch)
   });
