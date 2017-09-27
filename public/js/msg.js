@@ -1,4 +1,4 @@
-
+//
 // var logout = document.querySelector('#msg-btn');
 //
 // var myMsg = document.querySelector('#anim');
@@ -20,4 +20,4 @@
 //
 //
 // })
-
+//
