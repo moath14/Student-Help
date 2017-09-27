@@ -38,9 +38,10 @@ INSERT INTO students (name, email, password, img) VALUES
   ('moath', 'moath.box@gmail.com', '12356', 'moath.png');
 
 INSERT INTO books (title, isbn, version, auther, img_url,creator_email,status,borrower_email,booking_date) VALUES
-('Computer Science', '5666845222', '10', 'Matt', 'computer.png','mahmoud.box@gmail.com','available','moath.box@gmail.com','2017-07-25T16:58:35.296Z'),
-('UX/UI', '5666845222', '3', 'David', 'ux.png','ghadeer.box@gmail.com','available','mahmoud.box@gmail.com','2017-07-25T16:58:35.296Z'),
-('Data Mining', '6322845222', '5', 'Alex', 'DMining.png','moath.box@gmail.com','available','mahmoud.box@gmail.com','2017-07-25T16:58:35.296Z');
+('Computer Science', '566-6845222', '10', 'Matt', 'https://images-na.ssl-images-amazon.com/images/I/51F8O03FVSL.jpg','mahmoud.box@gmail.com','available','ghadeer.box@gmail.com','2017-07-25T16:58:35.296Z'),
+('UX/UI', '978-0134276717', '3', 'David', 'https://cdn-images-1.medium.com/max/1600/1*uVLkFQC3yhZo4Re2Ys2WCw.jpeg','ghadeer.box@gmail.com','available','mahmoud.box@gmail.com','2017-07-25T16:58:35.296Z'),
+('Abstract Algebra', '601-30029696', '3', 'David', 'https://images-na.ssl-images-amazon.com/images/I/516WR87HwbL._SX318_BO1,204,203,200_.jpg','ghadeer.box@gmail.com','available','mahmoud.box@gmail.com','2017-07-25T16:58:35.296Z'),
+('Data Mining', '632-2845222', '5', 'Alex', 'https://dz13w8afd47il.cloudfront.net/sites/default/files/1692_Learning%20Data%20mining%20with%20R_cov.jpg','moath.box@gmail.com','available','mahmoud.box@gmail.com','2017-07-25T16:58:35.296Z');
 
 
 COMMIT;
