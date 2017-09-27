@@ -36,12 +36,13 @@
 				{{#each books}}
 				<tr>
 					<td>{{this.id}}</td>
-						<td>{{this.title}}</td>
+					<td>{{this.title}}</td>
 					<td>{{this.isbn}}</td>
 					<td>{{this.version}}</td>
 					<td>{{this.auther}}</td>
 					<td class = 'img-src'><img src = "{{this.img_url}}"></td>
-
+					td>
+					<td><button id="mybtn1" class="add" style = "background-color:#2ECC71;outline:none"><a>edit</a></button></td>
 					<td><button class="del"><a  href ="/deleteBook/{{this.id}}">delete</a></button></td>
 				</tr>
 				{{/each}}
@@ -89,6 +90,43 @@
 
 </div>
 <!-- end modal box -->
+
+<!-- start modal box for edit -->
+
+<div id="mymodal1" class="modal">
+	<div class="container">
+		<div class="modal-content">
+			<div class="modal-header">
+				<span class="close1">&times;</span>
+				<h2>update book</h2>
+			</div>
+			<div class="modal-body">
+				<form id="form" action="/addbook" method="POST">
+					<label>title</label><br>
+					<input type="text" name="title">
+					<br><br>
+					<label>auther</label><br>
+					<input type="text" name="auther">
+					<br><br>
+					<label>version</label><br>
+					<input type="text" name="version">
+					<br><br>
+					<label>isbn</label><br>
+					<input type="text" name="isbn">
+					<br><br>
+					<label>url image</label><br>
+					<input type="text" name="img_url">
+					<br><br><br>
+					<div class="btn-center">
+						<button type="submit">save</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+</div>
+<!-- end modal box for edit -->
 
 <!-- start msg -->
 
