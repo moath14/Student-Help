@@ -40,6 +40,9 @@ router.get('/search', searchController.get);
 // function for profileController
 router.get('/profile', profileController.get);
 router.get('/deleteBook/:id', profileController.delete);
+router.get('/updateBook/:id', profileController.Update);
+router.get('/book/:id', profileController.getBookById);
+
 
 // function for moreBookController
 router.get('/moreBook', moreBookController.get);

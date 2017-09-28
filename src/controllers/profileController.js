@@ -28,3 +28,26 @@ exports.delete = (req, res, next) => {
     res.redirect('/profile');
   });
 };
+
+
+exports.getBookById = (req, res, next) => {
+bookModel.getBookById(req.params.id, (err, books) => {
+  if (err) {
+    return next(err);
+  }
+
+        res.send(books.rows[0])
+});
+};
+exports.Update = (req, res, next) => {
+
+  bookModel.updateBook(
+    req.body.id,req.body.title,
+    req.body.isbn,req.body.version,
+    req.body.auther,req.body.img_url,(err, books) => {
+    if (err) {
+      return next(err);
+    }
+    res.redirect('/profile');
+  });
+};

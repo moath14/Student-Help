@@ -8,18 +8,19 @@ var span = document.querySelector('.close');
 var span1 = document.querySelector('.close1');
 var form = document.getElementById('form');
 
-
-mybtn1.addEventListener('click',function () {
-	modal1.style.display = 'block'
-	// body...
-});
-
 mybtn.addEventListener('click',function () {
 	modal.style.display = 'block'
 	// body...
 });
 
+mybtn1.addEventListener('click',function () {
+	console.log("lkasd");
+	modal1.style.display = 'block'
+	// body...
+});
 
+
+if(span1)
 span1.addEventListener('click',function(){
 	modal1.style.display = "none";
 	form.reset();
