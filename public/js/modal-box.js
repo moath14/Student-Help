@@ -10,9 +10,9 @@ var form = document.getElementById('form');
 
 mybtn.addEventListener('click',function () {
 	modal.style.display = 'block'
+
 	// body...
 });
-
 
 mybtn1.addEventListener('click',function () {
 	console.log("lkasd");
